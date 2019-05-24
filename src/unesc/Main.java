@@ -30,11 +30,13 @@ public class Main {
     public void iniciar() {
         
         //Objetivo 1: Transformar o conteudo do "programa" em uma pilha de tokens.
-        Stack<String> tokens = new AnalisadorLexico().gerarTokens(programa);
+        Stack<String> tokens = new AnalisadorLexico()
+                .gerarTokens(programa);
         
         //Objetivo 2: Dentro do método analisar() escrever o algorítimo de contido no pseudocódigo 
         //            para verificar se a estrutura da linguagem definida na variável programa está correta
-        new AnalisadorSintatico().analisar(tokens);
+        //new AnalisadorSintatico()
+        //        .analisar(tokens);
     }
 
     public static void main(String args[]) {

@@ -2,14 +2,25 @@ package unesc.analisador;
 
 
 import java.util.Stack;
+import java.util.Collections;
 
 public class AnalisadorLexico {
-    
-    public Stack<String> gerarTokens(String programa){
+
+    public Stack<String> gerarTokens(String programa) {
         String[] tokens = programa.split(" ");
         Stack<String> pilhaTokens = new Stack<>();
-        //TODO: Adicione os elementos de "programa" dentro de "pilhaTokens". A ordem de leitura de pilhaToken deve ser a mesma contida na variável "programa"
-        return pilhaTokens;
+        Stack<String> pilhaInvertida = new Stack<>();
+        
+        for (int i = 0; i < tokens.length; i++) {
+            String token = tokens[i];
+            pilhaTokens.push(token);
+        }
+        
+        for (int i = pilhaTokens.size(); i > 0; i--) {
+            pilhaInvertida.push(pilhaTokens.pop());
+        }
+        
+        return pilhaInvertida;
     }
-    
+
 }
