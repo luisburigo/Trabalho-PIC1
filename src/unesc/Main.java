@@ -33,8 +33,12 @@ public class Main {
 
         //Objetivo 2: Dentro do método analisar() escrever o algorítimo de contido no pseudocódigo 
         //            para verificar se a estrutura da linguagem definida na variável programa está correta
-        new AnalisadorSintatico()
+        try{
+            new AnalisadorSintatico()
                 .analisar(tokens);
+        } catch(Error e){
+            System.out.println(e.getMessage());
+        }
     }
 
     public static void main(String args[]) {

@@ -12,18 +12,29 @@ public class AnalisadorSintatico {
 
     private final Map<String, Integer> linguagem = Gramatica.LINGUAGEM;
     private final Map<String, String> gramatica = Gramatica.GRAMATICA;
+    private Stack<Integer> identificadores = new Stack<>();
 
     public void analisar(Stack<String> tokens) {
-        List<Integer> identificadores = new ArrayList<Integer>();
-
-        // TODO: Implementar o pseudocódigo utilizando a a "linguagem" e gramática
-        for (int i = 0; i < tokens.size(); i++) {
-            identificadores.add(this.getIdentificadorOuInteiro(tokens.pop()));
-        }
-
-        // Apresentar uma mensagem informando se o programa está correto ou incorreto.
+        Stack<Integer> pilhaInteiros = new Stack<>();
+        
+        this.armazenaIdentificadores(tokens);
+        this.verificaPrimeiroIdentificador();
+        
+        System.out.println("É um terminal");
     }
 
+    private void armazenaIdentificadores(Stack<String> tokens){
+        for (int i = 0; i < tokens.size(); i++) {
+            this.identificadores.add(linguagem.get(tokens.pop()));
+        }
+    }
+    
+    private void verificaPrimeiroIdentificador(){
+        if(identificadores.get(0) != linguagem.get("PROGRAM")) {
+            throw new Error("O identificar não é um terminal 'PROGRAM'");
+        }
+    }
+    
     /**
      * Este método verifica se um token é um IDENTIFICADOR ou um INTEIRO
      */
