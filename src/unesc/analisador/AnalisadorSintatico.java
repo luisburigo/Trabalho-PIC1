@@ -21,7 +21,7 @@ public class AnalisadorSintatico {
     private Integer getIdentificadorOuInteiro(String token) {
         //verifica se é um identificador ou inteiro
         char[] cList = token.toCharArray();
-        boolean identificador = true;
+        boolean identificador = false;
         for(char c : cList) {
             if(Character.getType(c) != Character.UPPERCASE_LETTER) {
                 identificador = true;
