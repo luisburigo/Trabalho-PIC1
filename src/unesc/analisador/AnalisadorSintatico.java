@@ -15,23 +15,13 @@ public class AnalisadorSintatico {
     private Stack<Integer> identificadores = new Stack<>();
 
     public void analisar(Stack<String> tokens) {
-        Stack<Integer> pilhaInteiros = new Stack<>();
         
         this.armazenaIdentificadores(tokens);
-        this.verificaPrimeiroIdentificador();
-        
-        System.out.println("É um terminal");
     }
-
+    
     private void armazenaIdentificadores(Stack<String> tokens){
         for (int i = 0; i < tokens.size(); i++) {
             this.identificadores.add(linguagem.get(tokens.pop()));
-        }
-    }
-    
-    private void verificaPrimeiroIdentificador(){
-        if(identificadores.get(0) != linguagem.get("PROGRAM")) {
-            throw new Error("O identificar não é um terminal 'PROGRAM'");
         }
     }
     
