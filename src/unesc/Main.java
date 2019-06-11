@@ -31,7 +31,7 @@ public class Main {
         Stack<String> tokens = new AnalisadorLexico()
                 .gerarTokens(programa);
 
-        //Objetivo 2: Dentro do método analisar() escrever o algorítimo de contido no pseudocódigo 
+        //Objetivo 2: Dentro do método analisar() escrever o algorítimo de contido no pseudocódigo
         //            para verificar se a estrutura da linguagem definida na variável programa está correta
         try{
             new AnalisadorSintatico()
