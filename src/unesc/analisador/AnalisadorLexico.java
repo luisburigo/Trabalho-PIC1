@@ -7,14 +7,20 @@ public class AnalisadorLexico {
 
     public Stack<String> gerarTokens(String programa) {
         String[] tokens = programa.split(" ");
-        Stack<String> pilhaTokens = new Stack<>();
+        Stack pilhaInvertida = new Stack();
+        Stack pilhaAux = new Stack();
 
-        for (int i = tokens.length - 1; i >= 0; i--) {
-            String token = tokens[i];
-            pilhaTokens.push(token);
-        }
+       for(String s : tokens){
+           if(!s.isEmpty() && !s.equals(" ")){
+               pilhaAux.push(s);
+           }
+       }
+       
+       while(!pilhaAux.isEmpty()){
+           pilhaInvertida.push(pilhaAux.pop());
+       }
 
-        return pilhaTokens;
+        return pilhaInvertida;
     }
 
 }
