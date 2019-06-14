@@ -11,18 +11,18 @@ public class Main {
     //- Programa a ser analisado
     private String programa =
             "PROGRAM TESTE ; "
-                    + "VAR "
-                    + "   X , Y , Z : INTEGER ; "
-                    + "BEGIN "
-                    + "   X := 10 ; "
-                    + "   Y := 20 ; "
-                    + "   Z := 30 ; "
-                    + "  REPEAT "
-                    + "    BEGIN "
-                    + "      WRITELN ( X , Y , Z ) ; "
-                    + "    END "
-                    + "  UNTIL X > 10 ; "
-                    + "END . ";
+            + "VAR "
+            + "   X , Y , Z : INTEGER ; "
+            + "BEGIN "
+            + "   X := 10 ; "
+            + "   Y := 20 ; "
+            + "   Z := 30 ; "
+            + "  REPEAT "
+            + "    BEGIN "
+            + "      WRITELN ( X , Y , Z ) ; "
+            + "    END "
+            + "  UNTIL X > 10 ; "
+            + "END . ";
 
     /**
      * Veja as instruções dentro dos métodos gerarTokens() e analisar()

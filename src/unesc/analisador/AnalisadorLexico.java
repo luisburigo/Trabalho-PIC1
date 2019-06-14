@@ -11,8 +11,15 @@ public class AnalisadorLexico {
 
         for (int i = tokens.length - 1; i >= 0; i--) {
             String token = tokens[i];
-            pilhaTokens.push(token);
+
+            if (!token.isEmpty()){
+                pilhaTokens.push(token);
+            }
         }
+        
+//        while(!pilhaTokens.isEmpty()) {
+//            System.out.println("[" + pilhaTokens.pop() + "]");
+//        }
 
         return pilhaTokens;
     }
