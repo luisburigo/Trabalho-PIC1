@@ -62,11 +62,14 @@ public class AnalisadorSintatico {
             {
                 String juntar = Gramatica.GRAMATICA.get(topoX + "," + codigo);
                 
-                //Retire X da pilha
-                pilhaX.pop();
-                
-                if(juntar != null && !juntar.isEmpty())
+                if(juntar==null){
+                    //Retire X da pilha
+                    pilhaX.pop();
+                }
+                else
+                if(!juntar.isEmpty())
                 {
+                    pilhaX.pop();
                     //coloque Ykyk-1y2y1 na pilha(com y1 no topo)
                     Integer[]  y1y2 = Gramatica.geraDadosCruzamentoTabParsingToken(juntar);
                     for(int i = y1y2.length - 1; i >= 0; i--)
